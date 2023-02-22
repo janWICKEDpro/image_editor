@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(),
       body: Center(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spacebetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             height: 100,
