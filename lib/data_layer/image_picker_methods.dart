@@ -1,3 +1,1 @@
-clas ImagePickerMethods{
-  
-}
+class ImagePickerMethods {}
