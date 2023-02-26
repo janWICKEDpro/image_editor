@@ -1,3 +1,5 @@
 import 'package:image_picker/image_picker.dart';
 
-class ImagePickerMethods {}
+class ImagePickerMethods {
+  final imagePickerClassIncstance = ImagePicker();
+}
