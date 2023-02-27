@@ -1,11 +1,17 @@
 import 'package:image_picker/image_picker.dart';
 
 class ImagePickerMethods {
-  final imagePickerClassIncstance = ImagePicker();
+  final imagePickerClassInstance = ImagePicker();
 
   ///Select images form the devices gallery
-  pickFromGallery() {
-    try {} catch (e) {}
+  Future<XFile?> pickFromGallery() async {
+    try {
+      return await imagePickerClassInstance.pickImage(
+          source: ImageSource.gallery);
+    } catch (e) {
+      print(e);
+      return null;
+    }
   }
 
   ///select images form the devices camera
