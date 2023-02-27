@@ -15,7 +15,13 @@ class ImagePickerMethods {
   }
 
   ///select images form the devices camera
-  void pickFromCamera() {
-    try {} catch (e) {}
+  Future<XFile?> pickFromCamera() async {
+    try {
+      return await imagePickerClassInstance.pickImage(
+          source: ImageSource.camera);
+    } catch (e) {
+      print(e);
+      return null;
+    }
   }
 }
