@@ -4,8 +4,12 @@ class ImagePickerMethods {
   final imagePickerClassIncstance = ImagePicker();
 
   ///Select images form the devices gallery
-  void pickFromGallery() {}
+  pickFromGallery() {
+    try {} catch (e) {}
+  }
 
   ///select images form the devices camera
-  void pickFromCamera() {}
+  void pickFromCamera() {
+    try {} catch (e) {}
+  }
 }
