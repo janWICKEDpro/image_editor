@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ImagePickerMethods {
@@ -6,8 +7,9 @@ class ImagePickerMethods {
   ///Select images form the device gallery
   Future<XFile?> pickFromGallery() async {
     try {
-      return await imagePickerClassInstance.pickImage(
-          source: ImageSource.gallery);
+      final file =
+          await imagePickerClassInstance.pickImage(source: ImageSource.gallery);
+      return file;
     } catch (e) {
       print(e);
       return null;
@@ -17,8 +19,9 @@ class ImagePickerMethods {
   ///select images form the device camera
   Future<XFile?> pickFromCamera() async {
     try {
-      return await imagePickerClassInstance.pickImage(
-          source: ImageSource.camera);
+      final file =
+          await imagePickerClassInstance.pickImage(source: ImageSource.camera);
+      return file;
     } catch (e) {
       print(e);
       return null;
