@@ -10,7 +10,6 @@ class ImagePickerMethods {
           await imagePickerClassInstance.pickImage(source: ImageSource.gallery);
       return file;
     } catch (e) {
-      print(e);
       return null;
     }
   }
