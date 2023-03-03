@@ -21,7 +21,6 @@ class ImagePickerMethods {
           await imagePickerClassInstance.pickImage(source: ImageSource.camera);
       return file;
     } catch (e) {
-      print(e);
       return null;
     }
   }
