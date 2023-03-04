@@ -14,48 +14,70 @@ class HomeScreen extends StatelessWidget {
           child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                  image: AssetImage("assets/images/gallery3.ico")),
-              boxShadow: [
-                const BoxShadow(
+          InkWell(
+            onTap: () {},
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  image: const DecorationImage(
+                      image: AssetImage("assets/images/gallery3.ico")),
+                  boxShadow: [
+                    const BoxShadow(
+                      color: Color.fromARGB(255, 250, 242, 242),
+                      offset: Offset(-6.0, -6.0),
+                      blurRadius: 16.0,
+                    ),
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      offset: const Offset(6.0, 6.0),
+                      blurRadius: 16.0,
+                    ),
+                  ],
                   color: Color.fromARGB(255, 250, 242, 242),
-                  offset: Offset(-6.0, -6.0),
-                  blurRadius: 16.0,
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  offset: const Offset(6.0, 6.0),
-                  blurRadius: 16.0,
-                ),
-              ],
-              color: Color.fromARGB(255, 250, 242, 242),
-              borderRadius: BorderRadius.circular(12.0),
-            ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text("Gallery")
+            ]),
           ),
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                  image: AssetImage("assets/images/camera.ico")),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.white.withOpacity(0.8),
-                  offset: const Offset(-6.0, -6.0),
-                  blurRadius: 16.0,
+          InkWell(
+            onTap: () {},
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    image: const DecorationImage(
+                        image: AssetImage("assets/images/camera.ico")),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white.withOpacity(0.8),
+                        offset: const Offset(-6.0, -6.0),
+                        blurRadius: 16.0,
+                      ),
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        offset: const Offset(6.0, 6.0),
+                        blurRadius: 16.0,
+                      ),
+                    ],
+                    color: Color.fromARGB(255, 241, 238, 238),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
                 ),
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  offset: const Offset(6.0, 6.0),
-                  blurRadius: 16.0,
+                const SizedBox(
+                  height: 10,
                 ),
+                Text("Camera")
               ],
-              color: Color.fromARGB(255, 241, 238, 238),
-              borderRadius: BorderRadius.circular(12.0),
             ),
           ),
         ],
