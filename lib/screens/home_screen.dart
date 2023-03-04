@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Text("Gallery")
+              const Text("Gallery", style: TextStyle(fontFamily: 'RobotoMono'))
             ]),
           ),
           InkWell(
@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Text("Camera")
+                Text("Camera", style: TextStyle(fontFamily: 'RobotoMono'))
               ],
             ),
           ),
