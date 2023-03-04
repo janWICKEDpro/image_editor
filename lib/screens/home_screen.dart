@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
           child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             width: 100,
