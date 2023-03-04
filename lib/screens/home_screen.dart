@@ -15,9 +15,24 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height: 100,
             width: 100,
-            color: Colors.black,
+            height: 100,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.white.withOpacity(0.8),
+                  offset: Offset(-6.0, -6.0),
+                  blurRadius: 16.0,
+                ),
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  offset: Offset(6.0, 6.0),
+                  blurRadius: 16.0,
+                ),
+              ],
+              color: Color(0xFFEFEEEE),
+              borderRadius: BorderRadius.circular(12.0),
+            ),
           ),
           Container(
             height: 100,
