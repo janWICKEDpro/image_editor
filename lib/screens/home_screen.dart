@@ -18,10 +18,12 @@ class HomeScreen extends StatelessWidget {
             width: 100,
             height: 100,
             decoration: BoxDecoration(
+              image: const DecorationImage(
+                  image: AssetImage("assets/images/gallery3.ico")),
               boxShadow: [
-                BoxShadow(
-                  color: Colors.white.withOpacity(0.8),
-                  offset: const Offset(-6.0, -6.0),
+                const BoxShadow(
+                  color: Color.fromARGB(255, 250, 242, 242),
+                  offset: Offset(-6.0, -6.0),
                   blurRadius: 16.0,
                 ),
                 BoxShadow(
@@ -30,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                   blurRadius: 16.0,
                 ),
               ],
-              color: Color.fromARGB(255, 54, 18, 18),
+              color: Color.fromARGB(255, 250, 242, 242),
               borderRadius: BorderRadius.circular(12.0),
             ),
           ),
@@ -38,6 +40,8 @@ class HomeScreen extends StatelessWidget {
             width: 100,
             height: 100,
             decoration: BoxDecoration(
+              image: const DecorationImage(
+                  image: AssetImage("assets/images/camera.ico")),
               boxShadow: [
                 BoxShadow(
                   color: Colors.white.withOpacity(0.8),
@@ -50,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                   blurRadius: 16.0,
                 ),
               ],
-              color: Color.fromARGB(255, 250, 114, 114),
+              color: Color.fromARGB(255, 241, 238, 238),
               borderRadius: BorderRadius.circular(12.0),
             ),
           ),
