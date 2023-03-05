@@ -8,4 +8,6 @@ class PickImageCubit extends Cubit<PickImageState> {
   PickImageCubit() : super(const PickImageState());
 
   void pickImageCamera() {}
+
+  void pickImageGallery() {}
 }
