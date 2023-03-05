@@ -18,4 +18,8 @@ class PickImageCubit extends Cubit<PickImageState> {
     final file = await pickImage.pickFromGallery();
     emit(PickImageState(image: file));
   }
+
+  void canclePickedImage() {
+    emit(const PickImageState());
+  }
 }
