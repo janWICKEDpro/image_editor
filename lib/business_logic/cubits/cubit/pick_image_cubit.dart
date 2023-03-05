@@ -14,5 +14,8 @@ class PickImageCubit extends Cubit<PickImageState> {
     emit(PickImageState(image: file));
   }
 
-  void pickImageGallery() {}
+  void pickImageGallery() async {
+    final file = await pickImage.pickFromGallery();
+    emit(PickImageState(image: file));
+  }
 }
