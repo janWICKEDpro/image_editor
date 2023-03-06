@@ -86,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                             blurRadius: 16.0,
                           ),
                         ],
-                        color: Color.fromARGB(255, 250, 242, 242),
+                        color: const Color.fromARGB(255, 250, 242, 242),
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
