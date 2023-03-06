@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         },
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 133, 28, 28),
+            backgroundColor: const Color.fromARGB(255, 133, 28, 28),
             title: const Text("Image Editor"),
             centerTitle: true,
           ),
@@ -38,9 +38,9 @@ class HomeScreen extends StatelessWidget {
                               image: AssetImage("assets/images/gallery3.ico")),
                           boxShadow: [
                             BoxShadow(
-                              color: Color.fromARGB(255, 245, 243, 243)
+                              color: const Color.fromARGB(255, 245, 243, 243)
                                   .withOpacity(0.8),
-                              offset: Offset(-6.0, -6.0),
+                              offset: const Offset(-6.0, -6.0),
                               blurRadius: 16.0,
                             ),
                             BoxShadow(
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                               blurRadius: 16.0,
                             ),
                           ],
-                          color: Color.fromARGB(255, 250, 242, 242),
+                          color: const Color.fromARGB(255, 250, 242, 242),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
