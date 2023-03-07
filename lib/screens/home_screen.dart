@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_processing/business_logic/cubits/cubit/pick_image_cubit.dart';
+import 'package:image_processing/constants/constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -93,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Text("Camera", style: TextStyle(fontFamily: 'RobotoMono'))
+                    text("Camera")
                   ],
                 ),
               ),
