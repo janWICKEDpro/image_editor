@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                             image: AssetImage("assets/images/camera.ico")),
                         boxShadow: [
                           BoxShadow(
-                            color: Color.fromARGB(255, 245, 243, 243)
+                            color: const Color.fromARGB(255, 245, 243, 243)
                                 .withOpacity(0.8),
                             offset: const Offset(-6.0, -6.0),
                             blurRadius: 16.0,
