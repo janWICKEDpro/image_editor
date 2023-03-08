@@ -11,9 +11,7 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => PickImageCubit(),
       child: BlocListener<PickImageCubit, PickImageState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+        listener: (context, state) {},
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: const Color.fromARGB(255, 133, 28, 28),
