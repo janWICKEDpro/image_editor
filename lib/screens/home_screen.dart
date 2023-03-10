@@ -103,7 +103,7 @@ class HomeScreen extends StatelessWidget {
             )),
           );
         } else {
-          return EditScreen();
+          return const EditScreen();
         }
       },
     );
