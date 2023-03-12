@@ -11,7 +11,11 @@ class _EditScreenState extends State<EditScreen> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: const [],
+      children: [
+        Expanded(
+          child: Container(),
+        ),
+      ],
     );
   }
 }
