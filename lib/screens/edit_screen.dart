@@ -13,7 +13,7 @@ class _EditScreenState extends State<EditScreen> {
     return Stack(
       children: [
         Expanded(
-          child: Container(),
+          child: Container(color: Color.fromARGB(255, 243, 240, 240)),
         ),
       ],
     );
