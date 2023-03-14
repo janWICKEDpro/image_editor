@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         title: "Image processing",
         home: BlocProvider(
           create: (context) => PickImageCubit(),
-          child: HomeScreen(),
+          child: const HomeScreen(),
         ));
   }
 }
