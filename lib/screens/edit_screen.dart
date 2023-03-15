@@ -61,9 +61,7 @@ class _EditScreenState extends State<EditScreen> {
             color: Colors.red,
           ),
 
-          Container(
-            child: Image.file(File(image!.path)),
-          )
+          Image.file(File(image!.path))
         ],
       ),
     );
