@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_processing/business_logic/cubits/cubit/pick_image_cubit.dart';
 
 class EditScreen extends StatefulWidget {
   const EditScreen({super.key});
@@ -10,6 +12,7 @@ class EditScreen extends StatefulWidget {
 class _EditScreenState extends State<EditScreen> {
   @override
   Widget build(BuildContext context) {
+    final image = BlocProvider.of<PickImageCubit>(context).state;
     return Stack(
       children: [
         Expanded(
