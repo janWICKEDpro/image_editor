@@ -69,7 +69,7 @@ class _EditScreenState extends State<EditScreen> {
               color: Colors.red,
             ),
 
-            Image.file(File(image!.path))
+            AspectRatio(aspectRatio: 0.4, child: Image.file(File(image!.path)))
           ],
         ),
       ),
