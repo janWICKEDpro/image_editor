@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_processing/business_logic/cubits/cubit/pick_image_cubit.dart';
+import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/screens/home_screen.dart';
 
 void main() {
