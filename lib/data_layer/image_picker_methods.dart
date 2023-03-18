@@ -14,7 +14,7 @@ class ImagePickerMethods {
     }
   }
 
-  ///select images form the device camera
+  ///select image form the device camera
   Future<XFile?> pickFromCamera() async {
     try {
       final file =
