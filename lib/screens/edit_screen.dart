@@ -66,7 +66,7 @@ class _EditScreenState extends State<EditScreen> {
             // crop / rotate selectables
             Container(
               height: 30,
-              color: Colors.red,
+              color: Colors.blue,
             ),
             //manipulate the actual image
             AspectRatio(aspectRatio: 0.4, child: Image.file(File(image!.path)))
