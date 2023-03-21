@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/constants/constants.dart';
 
+import '../business_logic/edit_state/cubit/edit_state_cubit.dart';
+
 class EditScreen extends StatefulWidget {
   const EditScreen({super.key});
 
@@ -64,9 +66,15 @@ class _EditScreenState extends State<EditScreen> {
               ],
             ),
             // crop / rotate selectables
-            Container(
-              height: 30,
-              color: Colors.blue,
+            BlocBuilder<EditStateCubit, EditStateState>(
+              builder: (context, state) {
+                if (state is EditStateCrop) {
+                } else if (state is EditStateRotate) {}
+                return Container(
+                  height: 30,
+                  color: Colors.blue,
+                );
+              },
             ),
             //manipulate the actual image
             AspectRatio(aspectRatio: 0.4, child: Image.file(File(image!.path)))
