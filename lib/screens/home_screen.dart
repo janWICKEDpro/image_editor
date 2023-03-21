@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_processing/business_logic/edit_state/cubit/edit_state_cubit.dart';
 import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/constants/constants.dart';
 import 'package:image_processing/screens/edit_screen.dart';
@@ -103,7 +104,10 @@ class HomeScreen extends StatelessWidget {
             )),
           );
         } else {
-          return const EditScreen();
+          return BlocProvider(
+            create: (context) => EditStateCubit(),
+            child: EditScreen(),
+          );
         }
       },
     );
