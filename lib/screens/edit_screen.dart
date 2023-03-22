@@ -69,7 +69,10 @@ class _EditScreenState extends State<EditScreen> {
             BlocBuilder<EditStateCubit, EditStateState>(
               builder: (context, state) {
                 if (state is EditStateCrop) {
-                } else if (state is EditStateRotate) {}
+                  return // do something 
+                } else if (state is EditStateRotate) {
+                  return // do something
+                }
                 return Container(
                   height: 30,
                   color: Colors.blue,
