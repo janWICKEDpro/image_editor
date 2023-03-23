@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/constants/constants.dart';
@@ -73,7 +74,11 @@ class _EditScreenState extends State<EditScreen> {
                   return Container();
                 } else if (state is EditStateRotate) {
                   return ListView.builder(
-                      itemCount: 6, itemBuilder: (context, index) {});
+                      scrollDirection: Axis.horizontal,
+                      itemCount: cropRatio.length,
+                      itemBuilder: (context, index) {
+                        return InkWell(onTap: () {}, child: Container());
+                      });
                 }
                 return Container(
                   height: 30,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_processing/data_layer/crop_ratio.dart';
 
 Widget text(String text, [Color? color]) {
   return Text(
@@ -10,3 +12,7 @@ Widget text(String text, [Color? color]) {
     ),
   );
 }
+
+final cropRatio = <CropRatio>[
+  CropRatio(),
+];
