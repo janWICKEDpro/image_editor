@@ -69,9 +69,11 @@ class _EditScreenState extends State<EditScreen> {
             BlocBuilder<EditStateCubit, EditStateState>(
               builder: (context, state) {
                 if (state is EditStateCrop) {
+                  //Image Rotation Controller
                   return Container();
                 } else if (state is EditStateRotate) {
-                  return Container();
+                  return ListView.builder(
+                      itemCount: 6, itemBuilder: (context, index) {});
                 }
                 return Container(
                   height: 30,
