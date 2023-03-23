@@ -73,11 +73,27 @@ class _EditScreenState extends State<EditScreen> {
                   return Container();
                 } else if (state is EditStateRotate) {
                   return ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: cropRatio.length,
-                      itemBuilder: (context, index) {
-                        return InkWell(onTap: () {}, child: Container());
-                      });
+                    scrollDirection: Axis.horizontal,
+                    itemCount: cropRatio.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () {},
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(cropRatio[index].image!),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            text(cropRatio[index].name!)
+                          ],
+                        ),
+                      );
+                    },
+                  );
                 }
                 return Container(
                   height: 30,
