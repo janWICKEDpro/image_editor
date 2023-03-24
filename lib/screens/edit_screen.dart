@@ -77,7 +77,9 @@ class _EditScreenState extends State<EditScreen> {
                     itemCount: cropRatio.length,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          // call the appropriate crop ratio format function
+                        },
                         child: Column(
                           children: [
                             Container(
