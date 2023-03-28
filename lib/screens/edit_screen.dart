@@ -85,6 +85,7 @@ class _EditScreenState extends State<EditScreen> {
                             Container(
                               decoration: BoxDecoration(
                                 image: DecorationImage(
+                                  fit: BoxFit.cover,
                                   image: AssetImage(cropRatio[index].image!),
                                 ),
                               ),
