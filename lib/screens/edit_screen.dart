@@ -55,15 +55,30 @@ class _EditScreenState extends State<EditScreen> {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                    onPressed: () {}, child: text("Rotate", Colors.white)),
-                text("|", Colors.white),
-                TextButton(onPressed: () {}, child: text("crop", Colors.white))
-              ],
+            BlocBuilder<EditStateCubit, EditStateState>(
+              builder: (context, state) {
+                return Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextButton(
+                        onPressed: () {},
+                        child: text(
+                            "Rotate",
+                            state is EditStateCrop
+                                ? Colors.white
+                                : Colors.grey)),
+                    text("|", Colors.white),
+                    TextButton(
+                        onPressed: () {},
+                        child: text(
+                            "crop",
+                            state is EditStateRotate
+                                ? Colors.white
+                                : Colors.grey))
+                  ],
+                );
+              },
             ),
             // crop / rotate selectables
             BlocBuilder<EditStateCubit, EditStateState>(
