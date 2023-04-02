@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_processing/business_logic/change_aspect_ratio/change_aspect_ratio_cubit.dart';
+import 'package:image_processing/business_logic/crop_image/crop_image_cubit.dart';
 import 'package:image_processing/business_logic/edit_state/cubit/edit_state_cubit.dart';
 import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/constants/constants.dart';
@@ -104,8 +106,16 @@ class HomeScreen extends StatelessWidget {
             )),
           );
         } else {
-          return BlocProvider(
-            create: (context) => EditStateCubit(),
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => EditStateCubit(),
+              ),
+              BlocProvider(
+                create: (context) => ChangeAspectRatioCubit(),
+              ),
+              BlocProvider(create: (context) => CropImageCubit())
+            ],
             child: EditScreen(),
           );
         }
