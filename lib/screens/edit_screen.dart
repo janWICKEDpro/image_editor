@@ -89,6 +89,9 @@ class _EditScreenState extends State<EditScreen> {
                 } else if (state is EditStateRotate) {
                   return ListView.builder(
                     scrollDirection: Axis.horizontal,
+                    addAutomaticKeepAlives: true,
+                    addRepaintBoundaries: true,
+                    addSemanticIndexes: true,
                     itemCount: cropRatio.length,
                     itemBuilder: (context, index) {
                       return InkWell(
