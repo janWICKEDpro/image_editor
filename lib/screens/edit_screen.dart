@@ -96,7 +96,8 @@ class _EditScreenState extends State<EditScreen> {
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
-                          // call the appropriate crop ratio format function
+                          // call the appropriate change aspect ratio  function
+                          BlocProvider.of<C>(context)
                         },
                         child: Column(
                           children: [
