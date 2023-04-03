@@ -19,7 +19,7 @@ final cropRatio = <CropRatio>[
   CropRatio(image: 'assets/images/rectangle.ico', name: "2:3"),
 ];
 
-double getAppropriateCropRatio(int index) {
+double getAppropriateAspectRatio(int index) {
   if (index != 1) {
     switch (index) {
       case 0:
