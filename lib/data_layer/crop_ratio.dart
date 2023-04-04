@@ -1,6 +1,6 @@
-class CropRatio {
+class AspectRatios {
   String? image;
   String? name;
 
-  CropRatio({this.image, this.name});
+  AspectRatios({this.image, this.name});
 }
