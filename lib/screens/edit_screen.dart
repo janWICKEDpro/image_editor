@@ -120,14 +120,11 @@ class _EditScreenState extends State<EditScreen> {
                     },
                   );
                 }
-                return Container(
-                  height: 30,
-                  color: Colors.blue,
-                );
+                return Container();
               },
             ),
             //manipulate the actual image
-            AspectRatio(aspectRatio: 0.4, child: Image.file(File(image!.path)))
+            AspectRatio(aspectRatio: 1, child: Image.file(File(image!.path)))
           ],
         ),
       ),
