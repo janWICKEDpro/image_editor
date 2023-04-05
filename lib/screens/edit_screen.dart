@@ -124,7 +124,8 @@ class _EditScreenState extends State<EditScreen> {
               },
             ),
             //manipulate the actual image
-            AspectRatio(aspectRatio: 1, child: Image.file(File(image!.path)))
+            AspectRatio(
+                aspectRatio: 2 / 3, child: Image.file(File(image!.path)))
           ],
         ),
       ),
