@@ -125,7 +125,9 @@ class _EditScreenState extends State<EditScreen> {
             ),
             //manipulate the actual image
             AspectRatio(
-              aspectRatio: 1 / 3,
+              aspectRatio: BlocProvider.of<ChangeAspectRatioCubit>(context)
+                  .state
+                  .aspectRatio!,
               child: Image.file(
                 File(image!.path),
               ),
