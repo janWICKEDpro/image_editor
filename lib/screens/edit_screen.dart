@@ -63,7 +63,10 @@ class _EditScreenState extends State<EditScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<EditStateCubit>(context)
+                              .ediStateRotate();
+                        },
                         child: text(
                             "Rotate",
                             state is EditStateCrop
@@ -71,7 +74,10 @@ class _EditScreenState extends State<EditScreen> {
                                 : Colors.grey)),
                     text("|", Colors.white),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          BlocProvider.of<EditStateCubit>(context)
+                              .editStateCrop();
+                        },
                         child: text(
                             "crop",
                             state is EditStateRotate
@@ -88,36 +94,39 @@ class _EditScreenState extends State<EditScreen> {
                   //Image Rotation Controller
                   return Container();
                 } else if (state is EditStateRotate) {
-                  return ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    addAutomaticKeepAlives: true,
-                    addRepaintBoundaries: true,
-                    addSemanticIndexes: true,
-                    itemCount: cropRatio.length,
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        onTap: () {
-                          // call the appropriate change aspect ratio  function
-                          BlocProvider.of<ChangeAspectRatioCubit>(context)
-                              .changeAspectRatio(
-                                  getAppropriateAspectRatio(index));
-                        },
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(cropRatio[index].image!),
+                  return Container(
+                    height: 50,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      addAutomaticKeepAlives: true,
+                      addRepaintBoundaries: true,
+                      addSemanticIndexes: true,
+                      itemCount: cropRatio.length,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            // call the appropriate change aspect ratio  function
+                            BlocProvider.of<ChangeAspectRatioCubit>(context)
+                                .changeAspectRatio(
+                                    getAppropriateAspectRatio(index));
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage(cropRatio[index].image!),
+                                  ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(height: 10),
-                            text(cropRatio[index].name!)
-                          ],
-                        ),
-                      );
-                    },
+                              const SizedBox(height: 10),
+                              text(cropRatio[index].name!)
+                            ],
+                          ),
+                        );
+                      },
+                    ),
                   );
                 }
                 return Container();
