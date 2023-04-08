@@ -69,7 +69,7 @@ class _EditScreenState extends State<EditScreen> {
                         },
                         child: text(
                             "Rotate",
-                            state is EditStateCrop
+                            state is EditStateRotate
                                 ? Colors.white
                                 : Colors.grey)),
                     text("|", Colors.white),
@@ -80,7 +80,7 @@ class _EditScreenState extends State<EditScreen> {
                         },
                         child: text(
                             "crop",
-                            state is EditStateRotate
+                            state is EditStateCrop
                                 ? Colors.white
                                 : Colors.grey))
                   ],
@@ -95,12 +95,8 @@ class _EditScreenState extends State<EditScreen> {
                   return Container();
                 } else if (state is EditStateRotate) {
                   return Container(
-                    height: 50,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      addAutomaticKeepAlives: true,
-                      addRepaintBoundaries: true,
-                      addSemanticIndexes: true,
                       itemCount: cropRatio.length,
                       itemBuilder: (context, index) {
                         return InkWell(
