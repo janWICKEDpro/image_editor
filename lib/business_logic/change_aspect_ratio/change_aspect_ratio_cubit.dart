@@ -6,6 +6,7 @@ class ChangeAspectRatioCubit extends Cubit<ChangeAspectRatioState> {
   ChangeAspectRatioCubit() : super(ChangeAspectRatioState(aspectRatio: 1.0));
   //resize the picture to  a different aspect ratio
   void changeAspectRatio(double aspectRatio) {
+    print(aspectRatio);
     emit(ChangeAspectRatioState(aspectRatio: aspectRatio));
   }
 }

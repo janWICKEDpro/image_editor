@@ -6,6 +6,7 @@ import 'package:image_processing/business_logic/change_aspect_ratio/change_aspec
 import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/constants/constants.dart';
 
+import '../business_logic/change_aspect_ratio/change_aspect_ratio_state.dart';
 import '../business_logic/edit_state/cubit/edit_state_cubit.dart';
 
 class EditScreen extends StatefulWidget {
@@ -95,6 +96,8 @@ class _EditScreenState extends State<EditScreen> {
                   return Container();
                 } else if (state is EditStateRotate) {
                   return Container(
+                    height: 30,
+                    width: MediaQuery.of(context).size.width,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: cropRatio.length,
@@ -106,19 +109,19 @@ class _EditScreenState extends State<EditScreen> {
                                 .changeAspectRatio(
                                     getAppropriateAspectRatio(index));
                           },
-                          child: Column(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(cropRatio[index].image!),
-                                  ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              cropRatio[index].image!))),
                                 ),
-                              ),
-                              const SizedBox(height: 10),
-                              text(cropRatio[index].name!)
-                            ],
+                              ],
+                            ),
                           ),
                         );
                       },
@@ -129,13 +132,17 @@ class _EditScreenState extends State<EditScreen> {
               },
             ),
             //manipulate the actual image
-            AspectRatio(
-              aspectRatio: BlocProvider.of<ChangeAspectRatioCubit>(context)
-                  .state
-                  .aspectRatio!,
-              child: Image.file(
-                File(image!.path),
-              ),
+            BlocBuilder<ChangeAspectRatioCubit, ChangeAspectRatioState>(
+              builder: (context, state) {
+                return SingleChildScrollView(
+                  child: AspectRatio(
+                    aspectRatio: state.aspectRatio!,
+                    child: Image.file(
+                      File(image!.path),
+                    ),
+                  ),
+                );
+              },
             ),
           ],
         ),
