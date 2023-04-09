@@ -28,123 +28,95 @@ class _EditScreenState extends State<EditScreen> {
         decoration: const BoxDecoration(
             backgroundBlendMode: BlendMode.darken,
             color: Color.fromARGB(255, 10, 8, 8)),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      BlocProvider.of<PickImageCubit>(context)
-                          .canclePickedImage();
-                    },
-                    icon: const Icon(
-                      Icons.cancel_outlined,
-                      color: Colors.white,
-                    )),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.save_alt_outlined,
-                      color: Colors.white,
-                    )),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            BlocBuilder<EditStateCubit, EditStateState>(
-              builder: (context, state) {
-                return Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextButton(
-                        onPressed: () {
-                          BlocProvider.of<EditStateCubit>(context)
-                              .ediStateRotate();
-                        },
-                        child: text(
-                            "Rotate",
-                            state is EditStateRotate
-                                ? Colors.white
-                                : Colors.grey)),
-                    text("|", Colors.white),
-                    TextButton(
-                        onPressed: () {
-                          BlocProvider.of<EditStateCubit>(context)
-                              .editStateCrop();
-                        },
-                        child: text(
-                            "crop",
-                            state is EditStateCrop
-                                ? Colors.white
-                                : Colors.grey))
-                  ],
-                );
-              },
-            ),
-            // crop / rotate selectables
-            BlocBuilder<EditStateCubit, EditStateState>(
-              builder: (context, state) {
-                if (state is EditStateCrop) {
-                  //Image Rotation Controller
-                  return Container();
-                } else if (state is EditStateRotate) {
-                  return Container(
-                    height: 30,
-                    width: MediaQuery.of(context).size.width,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: cropRatio.length,
-                      itemBuilder: (context, index) {
-                        return InkWell(
-                          onTap: () {
-                            // call the appropriate change aspect ratio  function
-                            BlocProvider.of<ChangeAspectRatioCubit>(context)
-                                .changeAspectRatio(
-                                    getAppropriateAspectRatio(index));
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              cropRatio[index].image!))),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        BlocProvider.of<PickImageCubit>(context)
+                            .canclePickedImage();
                       },
-                    ),
+                      icon: const Icon(
+                        Icons.cancel_outlined,
+                        color: Colors.white,
+                      )),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.save_alt_outlined,
+                        color: Colors.white,
+                      )),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              BlocBuilder<EditStateCubit, EditStateState>(
+                builder: (context, state) {
+                  return Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            BlocProvider.of<EditStateCubit>(context)
+                                .ediStateRotate();
+                          },
+                          child: text(
+                              "Rotate",
+                              state is EditStateRotate
+                                  ? Colors.white
+                                  : Colors.grey)),
+                      text("|", Colors.white),
+                      TextButton(
+                          onPressed: () {
+                            BlocProvider.of<EditStateCubit>(context)
+                                .editStateCrop();
+                          },
+                          child: text(
+                              "crop",
+                              state is EditStateCrop
+                                  ? Colors.white
+                                  : Colors.grey))
+                    ],
                   );
-                }
-                return Container();
-              },
-            ),
-            //manipulate the actual image
-            BlocBuilder<ChangeAspectRatioCubit, ChangeAspectRatioState>(
-              builder: (context, state) {
-                return SingleChildScrollView(
-                  child: AspectRatio(
+                },
+              ),
+              // crop / rotate selectables
+              BlocBuilder<EditStateCubit, EditStateState>(
+                builder: (context, state) {
+                  if (state is EditStateCrop) {
+                    //Image Rotation Controller
+                    return Container();
+                  } else if (state is EditStateRotate) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [],
+                    );
+                  }
+                  return Container();
+                },
+              ),
+              //manipulate the actual image
+              BlocBuilder<ChangeAspectRatioCubit, ChangeAspectRatioState>(
+                builder: (context, state) {
+                  return AspectRatio(
                     aspectRatio: state.aspectRatio!,
                     child: Image.file(
                       File(image!.path),
                     ),
-                  ),
-                );
-              },
-            ),
-          ],
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
