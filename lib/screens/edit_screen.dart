@@ -26,8 +26,7 @@ class _EditScreenState extends State<EditScreen> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
-            backgroundBlendMode: BlendMode.darken,
-            color: Color.fromARGB(255, 10, 8, 8)),
+            backgroundBlendMode: BlendMode.darken, color: Colors.white),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -45,13 +44,13 @@ class _EditScreenState extends State<EditScreen> {
                       },
                       icon: const Icon(
                         Icons.cancel_outlined,
-                        color: Colors.white,
+                        color: Colors.black,
                       )),
                   IconButton(
                       onPressed: () {},
                       icon: const Icon(
                         Icons.save_alt_outlined,
-                        color: Colors.white,
+                        color: Colors.black,
                       )),
                 ],
               ),
@@ -72,9 +71,9 @@ class _EditScreenState extends State<EditScreen> {
                           child: text(
                               "Rotate",
                               state is EditStateRotate
-                                  ? Colors.white
+                                  ? Colors.black
                                   : Colors.grey)),
-                      text("|", Colors.white),
+                      text("|", Colors.black),
                       TextButton(
                           onPressed: () {
                             BlocProvider.of<EditStateCubit>(context)
@@ -83,7 +82,7 @@ class _EditScreenState extends State<EditScreen> {
                           child: text(
                               "crop",
                               state is EditStateCrop
-                                  ? Colors.white
+                                  ? Colors.black
                                   : Colors.grey))
                     ],
                   );
@@ -98,7 +97,69 @@ class _EditScreenState extends State<EditScreen> {
                   } else if (state is EditStateRotate) {
                     return Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [],
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/frame.ico'),
+                                ),
+                              ),
+                            ),
+                            text('Original'),
+                          ],
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/free.ico'),
+                                ),
+                              ),
+                            ),
+                            text('Free')
+                          ],
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/square.ico'),
+                                ),
+                              ),
+                            ),
+                            text('Square')
+                          ],
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/rectangle.ico'),
+                                ),
+                              ),
+                            ),
+                            text('2:3')
+                          ],
+                        )
+                      ],
                     );
                   }
                   return Container();
@@ -107,10 +168,13 @@ class _EditScreenState extends State<EditScreen> {
               //manipulate the actual image
               BlocBuilder<ChangeAspectRatioCubit, ChangeAspectRatioState>(
                 builder: (context, state) {
-                  return AspectRatio(
-                    aspectRatio: state.aspectRatio!,
-                    child: Image.file(
-                      File(image!.path),
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: AspectRatio(
+                      aspectRatio: state.aspectRatio!,
+                      child: Image.file(
+                        File(image!.path),
+                      ),
                     ),
                   );
                 },
