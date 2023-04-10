@@ -151,21 +151,23 @@ class _EditScreenState extends State<EditScreen> {
                             ],
                           ),
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              height: 40,
-                              width: 40,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/images/rectangle.ico'),
+                        InkWell(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 40,
+                                width: 40,
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/rectangle.ico'),
+                                  ),
                                 ),
                               ),
-                            ),
-                            text('2:3')
-                          ],
+                              text('2:3')
+                            ],
+                          ),
                         )
                       ],
                     );
