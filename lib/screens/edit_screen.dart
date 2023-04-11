@@ -165,7 +165,7 @@ class _EditScreenState extends State<EditScreen> {
                                   ),
                                 ),
                               ),
-                              text('2:3')
+                              text('1:3')
                             ],
                           ),
                         )
