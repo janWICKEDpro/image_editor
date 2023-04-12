@@ -175,7 +175,7 @@ class _EditScreenState extends State<EditScreen> {
                   return Container();
                 },
               ),
-              //manipulate the actual image
+
               BlocBuilder<ChangeAspectRatioCubit, ChangeAspectRatioState>(
                 builder: (context, state) {
                   return Padding(
