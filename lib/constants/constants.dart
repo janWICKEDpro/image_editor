@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:image_processing/data_layer/crop_ratio.dart';
 
 Widget text(String text, [Color? color]) {
   return Text(
@@ -11,13 +10,6 @@ Widget text(String text, [Color? color]) {
     ),
   );
 }
-
-final cropRatio = <AspectRatios>[
-  AspectRatios(image: 'assets/images/frame.ico', name: "Original"),
-  AspectRatios(image: 'assets/images/free.ico', name: "Free"),
-  AspectRatios(image: 'assets/images/square.ico', name: "Square"),
-  AspectRatios(image: 'assets/images/rectangle.ico', name: "2:3"),
-];
 
 //set the appropriate aspect ratio
 double getAppropriateAspectRatio(int index) {

@@ -99,6 +99,7 @@ class _EditScreenState extends State<EditScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         InkWell(
+                          onTap: () {},
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -117,6 +118,7 @@ class _EditScreenState extends State<EditScreen> {
                           ),
                         ),
                         InkWell(
+                          onTap: () {},
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -134,6 +136,7 @@ class _EditScreenState extends State<EditScreen> {
                           ),
                         ),
                         InkWell(
+                          onTap: () {},
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -152,6 +155,7 @@ class _EditScreenState extends State<EditScreen> {
                           ),
                         ),
                         InkWell(
+                          onTap: () {},
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

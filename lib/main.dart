@@ -4,6 +4,7 @@ import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart
 import 'package:image_processing/screens/home_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

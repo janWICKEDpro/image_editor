@@ -116,7 +116,7 @@ class HomeScreen extends StatelessWidget {
               ),
               BlocProvider(create: (context) => CropImageCubit())
             ],
-            child: EditScreen(),
+            child: const EditScreen(),
           );
         }
       },
