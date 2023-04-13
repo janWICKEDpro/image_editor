@@ -88,7 +88,6 @@ class _EditScreenState extends State<EditScreen> {
                   );
                 },
               ),
-              // crop / rotate selectables
               BlocBuilder<EditStateCubit, EditStateState>(
                 builder: (context, state) {
                   if (state is EditStateCrop) {
@@ -179,7 +178,6 @@ class _EditScreenState extends State<EditScreen> {
                   return Container();
                 },
               ),
-
               BlocBuilder<ChangeAspectRatioCubit, ChangeAspectRatioState>(
                 builder: (context, state) {
                   return Padding(
