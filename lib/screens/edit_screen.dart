@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_processing/business_logic/change_aspect_ratio/change_aspect_ratio_cubit.dart';
 import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/constants/constants.dart';
-
 import '../business_logic/change_aspect_ratio/change_aspect_ratio_state.dart';
 import '../business_logic/edit_state/cubit/edit_state_cubit.dart';
 
