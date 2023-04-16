@@ -3,7 +3,7 @@ import 'package:image_picker/image_picker.dart';
 class ImagePickerMethods {
   final imagePickerClassInstance = ImagePicker();
 
-  ///Select images form the device gallery
+  ///Select images form the device
   Future<XFile?> pickFromGallery() async {
     try {
       final file =
