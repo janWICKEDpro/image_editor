@@ -63,26 +63,28 @@ class _EditScreenState extends State<EditScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextButton(
-                          onPressed: () {
-                            BlocProvider.of<EditStateCubit>(context)
-                                .ediStateRotate();
-                          },
-                          child: text(
-                              "Rotate",
-                              state is EditStateRotate
-                                  ? Colors.black
-                                  : Colors.grey)),
+                        onPressed: () {
+                          BlocProvider.of<EditStateCubit>(context)
+                              .ediStateRotate();
+                        },
+                        child: text(
+                            "Rotate",
+                            state is EditStateRotate
+                                ? Colors.black
+                                : Colors.grey),
+                      ),
                       text("|", Colors.black),
                       TextButton(
-                          onPressed: () {
-                            BlocProvider.of<EditStateCubit>(context)
-                                .editStateCrop();
-                          },
-                          child: text(
-                              "crop",
-                              state is EditStateCrop
-                                  ? Colors.black
-                                  : Colors.grey))
+                        onPressed: () {
+                          BlocProvider.of<EditStateCubit>(context)
+                              .editStateCrop();
+                        },
+                        child: text(
+                            "crop",
+                            state is EditStateCrop
+                                ? Colors.black
+                                : Colors.grey),
+                      ),
                     ],
                   );
                 },
