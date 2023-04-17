@@ -22,15 +22,57 @@ class HomeScreen extends StatelessWidget {
               centerTitle: true,
             ),
             body: Center(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                  splashColor: Colors.white,
-                  onTap: () {
-                    BlocProvider.of<PickImageCubit>(context).pickImageGallery();
-                  },
-                  child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    splashColor: Colors.white,
+                    onTap: () {
+                      BlocProvider.of<PickImageCubit>(context)
+                          .pickImageGallery();
+                    },
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 100,
+                            height: 100,
+                            decoration: BoxDecoration(
+                              image: const DecorationImage(
+                                  image:
+                                      AssetImage("assets/images/gallery3.ico")),
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      const Color.fromARGB(255, 245, 243, 243)
+                                          .withOpacity(0.8),
+                                  offset: const Offset(-6.0, -6.0),
+                                  blurRadius: 16.0,
+                                ),
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  offset: const Offset(6.0, 6.0),
+                                  blurRadius: 16.0,
+                                ),
+                              ],
+                              color: const Color.fromARGB(255, 250, 242, 242),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Text("Gallery",
+                              style: TextStyle(fontFamily: 'RobotoMono'))
+                        ]),
+                  ),
+                  InkWell(
+                    splashColor: Colors.white,
+                    onTap: () {
+                      BlocProvider.of<PickImageCubit>(context)
+                          .pickImageCamera();
+                    },
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
@@ -38,8 +80,7 @@ class HomeScreen extends StatelessWidget {
                           height: 100,
                           decoration: BoxDecoration(
                             image: const DecorationImage(
-                                image:
-                                    AssetImage("assets/images/gallery3.ico")),
+                                image: AssetImage("assets/images/camera.ico")),
                             boxShadow: [
                               BoxShadow(
                                 color: const Color.fromARGB(255, 245, 243, 243)
@@ -60,50 +101,13 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                        const Text("Gallery",
-                            style: TextStyle(fontFamily: 'RobotoMono'))
-                      ]),
-                ),
-                InkWell(
-                  splashColor: Colors.white,
-                  onTap: () {
-                    BlocProvider.of<PickImageCubit>(context).pickImageCamera();
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          image: const DecorationImage(
-                              image: AssetImage("assets/images/camera.ico")),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color.fromARGB(255, 245, 243, 243)
-                                  .withOpacity(0.8),
-                              offset: const Offset(-6.0, -6.0),
-                              blurRadius: 16.0,
-                            ),
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.1),
-                              offset: const Offset(6.0, 6.0),
-                              blurRadius: 16.0,
-                            ),
-                          ],
-                          color: const Color.fromARGB(255, 250, 242, 242),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      text("Camera")
-                    ],
+                        text("Camera")
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            )),
+                ],
+              ),
+            ),
           );
         } else {
           return MultiBlocProvider(
