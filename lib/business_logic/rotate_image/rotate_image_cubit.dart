@@ -3,4 +3,6 @@ import 'package:image_processing/business_logic/rotate_image/rotate_image_state.
 
 class RotateImageCubit extends Cubit<RotateImageState> {
   RotateImageCubit(super.initialState);
+
+  ///Rotate image methods
 }
