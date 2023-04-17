@@ -13,12 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.system,
-        title: "Image processing",
-        home: BlocProvider(
-          create: (context) => PickImageCubit(),
-          child: const HomeScreen(),
-        ));
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
+      title: "Image processing",
+      home: BlocProvider(
+        create: (context) => PickImageCubit(),
+        child: const HomeScreen(),
+      ),
+    );
   }
 }
