@@ -92,7 +92,6 @@ class _EditScreenState extends State<EditScreen> {
               BlocBuilder<EditStateCubit, EditStateState>(
                 builder: (context, state) {
                   if (state is EditStateCrop) {
-                    //Image Rotation Controller
                     return Container();
                   } else if (state is EditStateRotate) {
                     return Row(
