@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_processing/business_logic/change_aspect_ratio/change_aspect_ratio_cubit.dart';
+import 'package:image_processing/business_logic/crop_image/crop_image_cubit.dart';
 import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/constants/constants.dart';
 import '../business_logic/change_aspect_ratio/change_aspect_ratio_state.dart';
@@ -78,6 +79,14 @@ class _EditScreenState extends State<EditScreen> {
                         onPressed: () {
                           BlocProvider.of<EditStateCubit>(context)
                               .editStateCrop();
+                          // trying out something very wierd
+                          // will probably not work so dont sweat it
+                          BlocProvider.of<CropImageCubit>(context).cropImage(
+                              BlocProvider.of<PickImageCubit>(context)
+                                  .state
+                                  .image!
+                                  .path,
+                              context);
                         },
                         child: text(
                             "crop",

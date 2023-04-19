@@ -5,4 +5,7 @@ class RotateImageCubit extends Cubit<RotateImageState> {
   RotateImageCubit(super.initialState);
 
   ///Rotate image methods
+  void rotateImage() {
+    // handle image rotation
+  }
 }
