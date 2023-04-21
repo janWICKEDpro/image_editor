@@ -21,6 +21,7 @@ class _EditScreenState extends State<EditScreen> {
   Widget build(BuildContext context) {
     final image = BlocProvider.of<PickImageCubit>(context).state.image;
 
+    // todo: rework on the ui
     return Material(
       child: Container(
         height: MediaQuery.of(context).size.height,
