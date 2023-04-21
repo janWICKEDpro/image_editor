@@ -80,7 +80,7 @@ class _EditScreenState extends State<EditScreen> {
                           BlocProvider.of<EditStateCubit>(context)
                               .editStateCrop();
                           // trying out something very wierd
-                          // will probably not work so dont sweat it
+                          // will probably not work so don't sweat it
                           BlocProvider.of<CropImageCubit>(context).cropImage(
                               BlocProvider.of<PickImageCubit>(context)
                                   .state
