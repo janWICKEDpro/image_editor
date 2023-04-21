@@ -56,7 +56,7 @@ class _EditScreenState extends State<EditScreen> {
                 ],
               ),
               const SizedBox(
-                height: 20,
+                height: 25,
               ),
               BlocBuilder<EditStateCubit, EditStateState>(
                 builder: (context, state) {
