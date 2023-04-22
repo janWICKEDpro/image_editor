@@ -14,8 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
-      title: "Image processing",
+      themeMode: ThemeMode.light,
       home: BlocProvider(
         create: (context) => PickImageCubit(),
         child: const HomeScreen(),
