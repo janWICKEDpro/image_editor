@@ -20,6 +20,7 @@ class ImagePickerMethods {
     try {
       final file =
           await imagePickerClassInstance.pickImage(source: ImageSource.camera);
+      assert(file != null);
       return file;
     } catch (e) {
       return null;
