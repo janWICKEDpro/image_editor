@@ -80,7 +80,6 @@ class _EditScreenState extends State<EditScreen> {
                         onPressed: () {
                           BlocProvider.of<EditStateCubit>(context)
                               .editStateCrop();
-
                           BlocProvider.of<CropImageCubit>(context).cropImage(
                               BlocProvider.of<PickImageCubit>(context)
                                   .state
