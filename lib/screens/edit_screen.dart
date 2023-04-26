@@ -75,7 +75,7 @@ class _EditScreenState extends State<EditScreen> {
                                 ? Colors.black
                                 : Colors.grey),
                       ),
-                      text("|", Colors.black),
+                      text(" | ", Colors.black),
                       TextButton(
                         onPressed: () {
                           BlocProvider.of<EditStateCubit>(context)
