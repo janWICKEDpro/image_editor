@@ -90,7 +90,7 @@ class _EditScreenState extends State<EditScreen> {
                             "crop",
                             state is EditStateCrop
                                 ? Colors.black
-                                : Colors.grey),
+                                : Color.fromARGB(255, 87, 85, 85)),
                       ),
                     ],
                   );
