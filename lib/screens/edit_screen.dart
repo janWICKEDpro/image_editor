@@ -72,7 +72,7 @@ class _EditScreenState extends State<EditScreen> {
                             "Rotate",
                             state is EditStateRotate
                                 ? Colors.black
-                                : Colors.grey),
+                                : Color.fromARGB(255, 87, 85, 85)),
                       ),
                       text(" | ", Colors.black),
                       TextButton(
