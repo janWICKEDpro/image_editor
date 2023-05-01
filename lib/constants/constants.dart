@@ -12,7 +12,7 @@ Widget text(String text, [Color? color]) {
   );
 }
 
-//set the appropriate aspect ratio
+//set the appropriate aspect ratio for the image
 double getAppropriateAspectRatio(int index) {
   switch (index) {
     case 0:
