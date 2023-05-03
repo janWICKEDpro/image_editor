@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//for all texts throughout the application
 Widget text(String text, [Color? color]) {
   return Text(
     text,
