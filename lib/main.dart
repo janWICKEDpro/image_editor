@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      theme: ThemeData(),
+      theme: ThemeData(accentColor: Colors.white30),
       home: BlocProvider(
         create: (context) => PickImageCubit(),
         child: const HomeScreen(),
