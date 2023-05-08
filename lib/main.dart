@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primaryColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Color.fromARGB(255, 133, 28, 28)),
       ),
       home: BlocProvider(
         create: (context) => PickImageCubit(),
