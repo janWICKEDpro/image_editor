@@ -27,9 +27,6 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: TiltPrism
-      fonts:
-        - asset: assets/fonts/TiltPrism-Regular.ttf
     - family: RobotoMono
       fonts:
         - asset: assets/fonts/RobotoMono-Regular.ttf
