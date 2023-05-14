@@ -99,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          height: 15,
+                          height: 20,
                         ),
                         text("Camera")
                       ],
