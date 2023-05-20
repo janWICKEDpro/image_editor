@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_processing/business_logic/change_aspect_ratio/change_aspect_ratio_cubit.dart';
 import 'package:image_processing/business_logic/crop_image/crop_image_cubit.dart';
+import 'package:image_processing/business_logic/crop_image/crop_image_state.dart';
 import 'package:image_processing/business_logic/pick_image/pick_image_cubit.dart';
 import 'package:image_processing/constants/constants.dart';
 import '../business_logic/change_aspect_ratio/change_aspect_ratio_state.dart';
@@ -192,7 +193,13 @@ class _EditScreenState extends State<EditScreen> {
                     child: AspectRatio(
                       aspectRatio: state.aspectRatio!,
                       child: Image.file(
-                        File(image!.path),
+                        File((BlocProvider.of<CropImageCubit>(context).state
+                                is Cropped)
+                            ? image!.path
+                            : BlocProvider.of<CropImageCubit>(context)
+                                .state
+                                .croppedFile!
+                                .path),
                       ),
                     ),
                   );
