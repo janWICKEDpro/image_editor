@@ -32,5 +32,6 @@ class CropImageCubit extends Cubit<CropImageState> {
         ]);
 
     emit(CropImageState(croppedFile: croppedFile));
+    emit(Cropped());
   }
 }
